@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Container from "@/container/Container";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Starter_kit",
-  description:
-    "This is a nextjs starter kit with next theme already set and has dark & light mode already implemented",
+  title: "Ecom Filthi",
+  description: "This is an e-commerce website for a local business",
 };
 
 export default function RootLayout({
@@ -38,6 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Container>{children}</Container>
+          <Toaster position={"bottom-right"} />
         </ThemeProvider>
       </body>
     </html>
